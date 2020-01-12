@@ -1,8 +1,15 @@
+import static spark.Spark.*;
+
 import models.Animal;
+import models.EndangeredAnimal;
 import models.Sighting;
+import org.sql2o.Connection;
+import spark.ModelAndView;
+import spark.template.handlebars.*;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class App {
 
@@ -18,7 +25,6 @@ public class App {
             model.put("allSightings", Sighting.allSightings());
             return new ModelAndView(model,"index.hbs");
         }, new HandlebarsTemplateEngine());
-
 
         get("/dashboard", (req,res)->{
             Map<String, Object> model = new HashMap<>();
@@ -68,4 +74,3 @@ public class App {
     }
 
 }
-
