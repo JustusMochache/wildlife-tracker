@@ -3,11 +3,10 @@ package models;
 import interfaces.AnimalInterface;
 import org.sql2o.Connection;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class EndangeredAnimal  {
+public class EndangeredAnimal {
     private int animal_id;
     private String animal_name;
     private String animal_health;
