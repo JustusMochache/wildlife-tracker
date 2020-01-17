@@ -23,6 +23,7 @@ The following files have been resolved:
    org.mozilla:rhino:jar:1.7R4:compile
    org.sql2o:sql2o:jar:1.5.4:compile
    org.eclipse.jetty:jetty-server:jar:9.4.4.v20170414:compile
+   com.h2database:h2:jar:1.4.191:compile
    org.eclipse.jetty.websocket:websocket-client:jar:9.4.4.v20170414:compile
    org.antlr:antlr4-runtime:jar:4.5.1-1:compile
    org.eclipse.jetty:jetty-security:jar:9.4.4.v20170414:compile

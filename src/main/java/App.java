@@ -5,6 +5,8 @@ import models.EndangeredAnimal;
 import models.Sighting;
 import org.sql2o.Connection;
 import spark.ModelAndView;
+import spark.Request;
+import spark.Response;
 import spark.template.handlebars.*;
 
 import java.util.ArrayList;
@@ -42,13 +44,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-        get("/dashboard", (req,res)->{
-            Map<String, Object> model = new HashMap<>();
-            model.put("allAnimals", Animal.getAllAnimals());
-            model.put("allEndangered", EndangeredAnimal.getAllAnimals());
-            model.put("allSightings", Sighting.allSightings());
-            return new ModelAndView(model,"dashboard.hbs");
-        }, new HandlebarsTemplateEngine());
+
 
 
         get("/new-animal", (req,res)->{
@@ -93,4 +89,11 @@ public class App {
 
     }
 
+    private static ModelAndView handle(Request req, Response res) {
+        Map<String, Object> model = new HashMap<>();
+        model.put("allAnimals", Animal.getAllAnimals());
+        model.put("allEndangered", EndangeredAnimal.getAllAnimals());
+        model.put("allSightings", Sighting.allSightings());
+        return new ModelAndView(model, "dashboard.hbs");
+    }
 }
